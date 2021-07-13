@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+    <script>
+        const myxinin = {
+            count:300,
+            data(){
+                return {
+                    count:333,
+                    num:100
+                }
+            }
+        }
+
+        
+
+        const app = Vue.createApp({
+            count:200,
+            data(){
+                return {
+                    count: 1
+                }
+            },
+            // mixins:[myxinin],
+            template:`
+                <div>{{this.$options.count}}</div>
+            `
+        });
+
+        const vm = app.mount('#root');
+    </script>
+</html>

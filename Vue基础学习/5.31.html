@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+      
+    <!-- <style>
+        @keyframes shake {
+            0% {
+                transform: translateX(-100px);
+            }
+            50% {
+                transform: translateX(-50px);
+            }
+            100% {
+                transform: translateX(50px);
+            }
+        }
+
+        @keyframes shakeout {
+            0% {
+                transform: translateX(100px);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(-50px);
+            }
+        }
+
+        .alsk-enter-active{
+            animation: shake 3s ease-in;
+        }
+        .alsk-leave-active{
+            animation: shakeout 3s ease-in;
+        }
+
+    </style> -->
+</head>
+<body>
+    <div id="root"></div>
+</body>
+    <script>
+        const app= Vue.createApp({
+            data(){
+                return {
+                    show:true
+                }
+            },
+            methods:{
+                handleClick(){
+                    this.show = !this.show;
+                }
+            },
+            template:`<div>
+                    <transition 
+                        enter-active-class="animate__animated animate__bounce"
+                        left-active-class="animate__animated animate__bounce"
+                    >
+                        <div v-show="show">hello world</div>
+                    </transition>
+                    <button @click="handleClick">提交</button>
+                </div>`
+        });
+
+        const vm = app.mount('#root');
+    </script>
+</html>
